@@ -21,7 +21,7 @@ public class CheckInBO {
         this.personRepository = personRepository;
     }
 
-    public List<CheckInEntity> getAllCheckIn() {
+    public List<CheckInEntity> findAll() {
         return checkInRepository.findAll();
     }
 

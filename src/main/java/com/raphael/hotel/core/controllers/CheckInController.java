@@ -4,6 +4,7 @@ package com.raphael.hotel.core.controllers;
 import com.raphael.hotel.core.bos.CheckInBO;
 import com.raphael.hotel.core.bos.PersonBO;
 import com.raphael.hotel.persistence.dto.CheckInDTO;
+import com.raphael.hotel.persistence.dto.TableDTO;
 import com.raphael.hotel.persistence.entities.CheckInEntity;
 import com.raphael.hotel.persistence.entities.PersonEntity;
 import java.util.List;
@@ -35,39 +36,29 @@ public class CheckInController {
         return "Hello " + id;
     }
 
-    @RequestMapping(value = "/all", method = RequestMethod.GET)
-    public ResponseEntity<List<CheckInDTO>> getAllCheckIn() {
-        List<CheckInEntity> checkInEntity = checkInBO.getAllCheckIn();
-        List<CheckInDTO> response = checkInEntity
-            .stream()
-            .map(entity -> {
-                CheckInDTO dto =  new CheckInDTO();
-                dto.setVehicle(entity.getVehicle());
-                dto.setEnterDate(entity.getEnterDate());
-                dto.setLeaveDate(entity.getLeaveDate());
-                dto.setBill(entity.getBill());
-                return dto;
-            })
-            .collect(Collectors.toList());
-
-        return new ResponseEntity<>(response, HttpStatus.OK);
-    }
-
 
     @RequestMapping(value = "/post", method = RequestMethod.POST)
-    public ResponseEntity requestAdditionalCopyReason(@RequestBody CheckInDTO postData) {
+    public ResponseEntity newCheckIn(@RequestBody CheckInDTO postData) {
 
         CheckInEntity checkInEntity = new CheckInEntity();
 
-        checkInEntity.setEnterDate(postData.getEnterDate());
-        checkInEntity.setLeaveDate(postData.getLeaveDate());
+        checkInEntity.setEnterDate(postData.getLeave_date());
+        checkInEntity.setLeaveDate(postData.getEnter_date());
         checkInEntity.setVehicle(postData.getVehicle());
-        checkInEntity.setPersonId(postData.getPersonId());
+        checkInEntity.setPersonId(postData.getPerson_id());
         checkInEntity.setBill(postData.getBill());
 
         checkInBO.save(checkInEntity);
 
         return new ResponseEntity(HttpStatus.CREATED);
     }
+
+    @RequestMapping(value = "/get", method = RequestMethod.GET)
+    public ResponseEntity getCheckIn() {
+
+        return new ResponseEntity(HttpStatus.CREATED);
+    }
+
+
 
 }

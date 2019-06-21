@@ -25,7 +25,7 @@ public class PersonController {
     }
 
     @RequestMapping(value = "/all", method = RequestMethod.GET)
-    public ResponseEntity<List<PersonEntity>> getAllPax() {
+    public ResponseEntity<List<PersonEntity>> getAllPersons() {
         List<PersonEntity> persons = personBO.findAll();
         List<PersonEntity> response = persons
             .stream()

@@ -7,7 +7,7 @@ databaseChangeLog:
             tableName: person
             columns:
               - column:
-                  name: id
+                  name: person_id
                   type: bigint
                   constraints:
                     primaryKey: true
@@ -27,12 +27,11 @@ databaseChangeLog:
                   type: varchar(300)
                   constraints:
                     nullable: false
-
         - createTable:
             tableName: check_in
             columns:
               - column:
-                  name: id
+                  name: check_in_id
                   type: bigint
                   constraints:
                     primaryKey: true
@@ -58,9 +57,25 @@ databaseChangeLog:
                   constraints:
                     nullable: false
               - column:
-                  name: person_id
+                  name: person_fk_id
                   type: int
                   constraints:
                     nullable: false
                     foreignKeyName: fk_abc_account
-                    references: person(id)
+                    references: person(person_id)
+        - addAutoIncrement:
+            catalogName: cat
+            columnDataType: int
+            columnName: person_id
+            incrementBy: 1
+            schemaName: public
+            startWith: 100
+            tableName: person
+        - addAutoIncrement:
+            catalogName: cat
+            columnDataType: int
+            columnName: check_in_id
+            incrementBy: 1
+            schemaName: public
+            startWith: 100
+            tableName: check_in

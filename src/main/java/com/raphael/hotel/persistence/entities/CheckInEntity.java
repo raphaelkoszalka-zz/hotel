@@ -14,10 +14,10 @@ import javax.persistence.Table;
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class CheckInEntity {
 
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     @Id
-    private Long id;
+    @Column(name = "check_in_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
 
     @Column(name = "enter_date", nullable = false)
     private LocalDateTime enterDate;
@@ -28,11 +28,18 @@ public class CheckInEntity {
     @Column(name = "vehicle", nullable = false)
     private boolean vehicle;
 
-    @Column(name = "bill", columnDefinition = "0")
+    @Column(name = "bill")
     private Long bill;
 
-    @Column(name = "person_id")
-    private Long personId;
+    @Column(name = "person_fk_id")
+    private int personId;
+
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public LocalDateTime getEnterDate() {
         return enterDate;
@@ -55,8 +62,8 @@ public class CheckInEntity {
         this.vehicle = status;
     }
 
-    public Long getPersonId() { return personId; }
-    public void setPersonId(Long personId) { this.personId = personId; }
+    public int getPersonId() { return personId; }
+    public void setPersonId(int personId) { this.personId = personId; }
 
     public Long getBill() { return bill; }
     public void setBill(Long bill) { this.bill = bill; }
