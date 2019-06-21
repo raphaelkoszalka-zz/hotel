@@ -2,7 +2,6 @@ package com.raphael.hotel.core.bos;
 
 import com.raphael.hotel.persistence.dto.TableDTO;
 import com.raphael.hotel.persistence.entities.CheckInEntity;
-import com.raphael.hotel.persistence.entities.PersonEntity;
 import com.raphael.hotel.persistence.repositories.CheckInRepository;
 import java.time.LocalDateTime;
 import java.util.List;

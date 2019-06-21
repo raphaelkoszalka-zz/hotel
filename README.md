@@ -14,6 +14,20 @@ To run, go to Gradle Tab and bootRun the application.
 - Spring Boot JPA;
 - Any database, for this test I chose PostegreSQL for example.
 
+## Methods
+
+### Check-In POST example
+
+```
+{
+	"enter_date" : "2019-06-21T08:00:00",
+	"leave_date" : "2019-06-27T08:00:00",
+	"vehicle" : false,
+	"person_id" : 9,
+	"bill" : 0
+}
+```
+
 ## Project structure
 
 - com.raphael.hotel
