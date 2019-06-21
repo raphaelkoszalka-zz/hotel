@@ -26,7 +26,7 @@ public class RulesBO {
 
     public List<TableDTO> getCheckedStatus() {
         List<CheckInEntity> checkedGuests = checkInRepository.findAll();
-        List<TableDTO> dtos = checkedGuests
+        return checkedGuests
             .stream()
             .map(guest -> {
                 TableDTO hostedGuest = new TableDTO();
@@ -36,7 +36,6 @@ public class RulesBO {
                 return hostedGuest;
             })
             .collect(Collectors.toList());
-        return dtos;
     }
 
 }
