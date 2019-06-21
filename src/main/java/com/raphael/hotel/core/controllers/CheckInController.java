@@ -53,12 +53,6 @@ public class CheckInController {
         return new ResponseEntity(HttpStatus.CREATED);
     }
 
-    @RequestMapping(value = "/get", method = RequestMethod.GET)
-    public ResponseEntity getCheckIn() {
-
-        return new ResponseEntity(HttpStatus.CREATED);
-    }
-
 
 
 }

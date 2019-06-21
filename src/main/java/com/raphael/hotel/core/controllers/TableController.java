@@ -21,14 +21,11 @@ public class TableController {
         this.rulesBO = rulesBO;
     }
 
-    /**
-     *
-    I forgot to commit before, I am having an error on this ResponseEntity
+    // I forgot to commit before, I am having an error on this ResponseEntity
     // I am correcting it right now, if you look in a few moments it will be written
     // in a proper manner
     @RequestMapping(value = "/checked-in", method = RequestMethod.GET)
     public List<TableDTO> getAllCheckedIn() {
         return new ResponseEntity<>(rulesBO.getCheckedStatus(), HttpStatus.OK);
     }
-     */
 }
