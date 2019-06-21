@@ -42,7 +42,6 @@ public class PersonController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-
     @RequestMapping(value = "/single/{id}", method = RequestMethod.GET)
     public PersonEntity getPersonEntityById(@PathVariable("id") Long id) {
         PersonEntity entity = personBO.getPersonEntityById(id);
@@ -54,15 +53,11 @@ public class PersonController {
 
     @RequestMapping(value = "/post", method = RequestMethod.POST)
     public ResponseEntity newGuest(@RequestBody PersonDTO postData) {
-
         PersonEntity personEntity = new PersonEntity();
-
         personEntity.setPersonName(postData.getName());
         personEntity.setPersonDocument(postData.getDocument());
         personEntity.setPersonPhone(postData.getPhone());
-
         personBO.save(personEntity);
-
         return new ResponseEntity(HttpStatus.CREATED);
     }
 

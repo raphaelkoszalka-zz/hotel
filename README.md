@@ -13,6 +13,18 @@ To run, go to Gradle Tab and bootRun the application.
 - Spring Boot Web;
 - Spring Boot JPA;
 - Any database, for this test I chose PostegreSQL for example.
+## Endpoints
+
+- /person/all (retrieve all guests)
+- /person/{id} (retrieve a single guest)
+- /person/post (post a new guest)
+
+- /check-in/all (retrieve all check in)
+- /check-in/{id} (retrieve a single check in)
+- /check-in/post (post a new check in)
+
+- /status/checked-in (get checked in guests)
+- /status/checked-out (get checked out guests)
 
 ## Methods
 
