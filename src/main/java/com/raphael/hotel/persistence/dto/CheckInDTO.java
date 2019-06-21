@@ -8,48 +8,25 @@ import java.time.LocalDateTime;
 public class CheckInDTO {
 
     private LocalDateTime enterDate;
-    private LocalDateTime leaveDate;
-    private Long bill;
-    private Long personId;
     private boolean vehicle;
+    private Long personId;
+    private Long bill;
+    private LocalDateTime leaveDate;
 
-    public LocalDateTime getEnterDate() {
-        return enterDate;
-    }
+    public Long getPersonId() { return personId; }
+    public void setPersonId(Long personId) { this.personId = personId; }
 
-    public void setEnterDate(LocalDateTime enterDate) {
-        this.enterDate = enterDate;
-    }
+    public LocalDateTime getEnterDate() { return enterDate; }
+    public void setEnterDate(LocalDateTime enterDate) { this.enterDate = enterDate; }
 
-    public LocalDateTime getLeaveDate() {
-        return enterDate;
-    }
+    public LocalDateTime getLeaveDate() { return enterDate; }
+    public void setLeaveDate(LocalDateTime leaveDate) { this.leaveDate = leaveDate; }
 
-    public void setLeaveDate(LocalDateTime leaveDate) {
-        this.leaveDate = leaveDate;
-    }
+    public Long getBill() { return bill; }
+    public void setBill(Long bill) { this.bill = bill; }
 
-    public Long getBill(Long bill) {
-        return bill;
-    }
+    public boolean getVehicle() { return vehicle; }
+    public void setVehicle(boolean status) { this.vehicle = status; }
 
-    public void setBill(Long bill) {
-        this.bill = bill;
-    }
-
-    public Long getPersonId() {
-        return personId;
-    }
-    public void setPersonId(Long personId) {
-        this.personId = personId;
-    }
-
-    public boolean getVehicle() {
-        return vehicle;
-    }
-
-    public void setVehicle(boolean status) {
-        this.vehicle = status;
-    }
 
 }

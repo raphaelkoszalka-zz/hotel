@@ -22,6 +22,11 @@ databaseChangeLog:
                   type: varchar(300)
                   constraints:
                     nullable: false
+              - column:
+                  name: phone
+                  type: varchar(300)
+                  constraints:
+                    nullable: false
 
         - createTable:
             tableName: check_in
@@ -33,12 +38,12 @@ databaseChangeLog:
                     primaryKey: true
                     nullable: false
               - column:
-                  name: enterDate
+                  name: enter_date
                   type: datetime
                   constraints:
                     nullable: false
               - column:
-                  name: leaveDate
+                  name: leave_date
                   type: datetime
                   constraints:
                     nullable: false
@@ -53,7 +58,7 @@ databaseChangeLog:
                   constraints:
                     nullable: false
               - column:
-                  name: personId
+                  name: person_id
                   type: int
                   constraints:
                     nullable: false

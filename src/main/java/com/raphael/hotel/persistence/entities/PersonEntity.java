@@ -1,17 +1,19 @@
 package com.raphael.hotel.persistence.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.FetchType;
 
 @Entity
 @Table(name = "person", schema = "public")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class PersonEntity {
 
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     @Id
     private Long id;
@@ -22,21 +24,28 @@ public class PersonEntity {
     @Column(name = "document")
     private String document;
 
+    @Column(name = "phone")
+    private String phone;
 
-    public String getName()  {
+    public String getPersonName()  {
         return name;
     }
-
-    public void setName(String name) {
+    public void setPersonName(String name) {
         this.name = name;
     }
 
-    public String getDocument()  {
-        return name;
+    public String getPersonDocument()  {
+        return document;
+    }
+    public void setPersonDocument(String document) {
+        this.document = document;
     }
 
-    public void setDocument(String name) {
-        this.name = name;
+    public String getPersonPhone()  {
+        return phone;
+    }
+    public void setPersonPhone(String phone) {
+        this.phone = phone;
     }
 
 

@@ -4,10 +4,9 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.time.LocalDateTime;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -15,14 +14,15 @@ import javax.persistence.Table;
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class CheckInEntity {
 
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     @Id
     private Long id;
 
-    @Column(name = "enterDate", nullable = false)
+    @Column(name = "enter_date", nullable = false)
     private LocalDateTime enterDate;
 
-    @Column(name = "leaveDate", nullable = false)
+    @Column(name = "leave_date", nullable = false)
     private LocalDateTime leaveDate;
 
     @Column(name = "vehicle", nullable = false)
@@ -31,14 +31,12 @@ public class CheckInEntity {
     @Column(name = "bill", columnDefinition = "0")
     private Long bill;
 
-    @JoinColumn(name = "person")
-    @ManyToOne(fetch = FetchType.LAZY)
-    private PersonEntity person;
+    @Column(name = "person_id")
+    private Long personId;
 
     public LocalDateTime getEnterDate() {
         return enterDate;
     }
-
     public void setEnterDate(LocalDateTime enterDate) {
         this.enterDate = enterDate;
     }
@@ -46,7 +44,6 @@ public class CheckInEntity {
     public LocalDateTime getLeaveDate() {
         return leaveDate;
     }
-
     public void setLeaveDate(LocalDateTime leaveDate) {
         this.leaveDate = leaveDate;
     }
@@ -54,24 +51,13 @@ public class CheckInEntity {
     public boolean getVehicle() {
         return vehicle;
     }
-
     public void setVehicle(boolean status) {
         this.vehicle = status;
     }
 
-    public PersonEntity getPerson() {
-        return person;
-    }
+    public Long getPersonId() { return personId; }
+    public void setPersonId(Long personId) { this.personId = personId; }
 
-    public void setPerson(PersonEntity person) {
-        this.person = person;
-    }
-
-    public Long getBill() {
-        return bill;
-    }
-
-    public void setBill(Long bill) {
-        this.bill = bill;
-    }
+    public Long getBill() { return bill; }
+    public void setBill(Long bill) { this.bill = bill; }
 }
