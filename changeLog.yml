@@ -1,0 +1,61 @@
+databaseChangeLog:
+  - changeSet:
+      id: 67e7cf97-ebdc-4439-9a65-c2853b435c98
+      author: raphael-koszalka
+      changes:
+        - createTable:
+            tableName: person
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(300)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: document
+                  type: varchar(300)
+                  constraints:
+                    nullable: false
+
+        - createTable:
+            tableName: check_in
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: enterDate
+                  type: datetime
+                  constraints:
+                    nullable: false
+              - column:
+                  name: leaveDate
+                  type: datetime
+                  constraints:
+                    nullable: false
+              - column:
+                  name: vehicle
+                  type: boolean
+                  constraints:
+                    nullable: false
+              - column:
+                  name: bill
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: personId
+                  type: int
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_abc_account
+                    references: person(id)
