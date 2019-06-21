@@ -27,4 +27,5 @@ public class PersonBO {
     public void save(PersonEntity data) {
         personRepository.save(data);
     }
+
 }

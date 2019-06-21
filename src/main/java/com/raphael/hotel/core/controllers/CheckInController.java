@@ -31,9 +31,15 @@ public class CheckInController {
         this.personBO = personBO;
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public String getConfigurationsByDomain(@PathVariable("id") String id) {
-        return "Hello " + id;
+    @RequestMapping(value = "/single/{id}", method = RequestMethod.GET)
+    public CheckInEntity getCheckInById(@PathVariable("id") Long id) {
+        CheckInEntity entity = checkInBO.getCheckInById(id);
+        entity.setBill(entity.getBill());
+        entity.setVehicle(entity.getVehicle());
+        entity.setLeaveDate(entity.getLeaveDate());
+        entity.setEnterDate(entity.getEnterDate());
+        entity.setPersonId(entity.getPersonId());
+        return entity;
     }
 
 

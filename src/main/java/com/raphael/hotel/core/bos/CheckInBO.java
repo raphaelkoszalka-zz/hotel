@@ -1,7 +1,6 @@
 package com.raphael.hotel.core.bos;
 
 import com.raphael.hotel.persistence.entities.CheckInEntity;
-import com.raphael.hotel.persistence.entities.PersonEntity;
 import com.raphael.hotel.persistence.repositories.CheckInRepository;
 import com.raphael.hotel.persistence.repositories.PersonRepository;
 import java.util.List;
@@ -12,13 +11,10 @@ import org.springframework.stereotype.Service;
 public class CheckInBO {
 
     private final CheckInRepository checkInRepository;
-    private final PersonRepository personRepository;
 
     @Autowired
-    public CheckInBO(final CheckInRepository checkInRepository,
-        final PersonRepository personRepository) {
+    public CheckInBO(final CheckInRepository checkInRepository) {
         this.checkInRepository = checkInRepository;
-        this.personRepository = personRepository;
     }
 
     public List<CheckInEntity> findAll() {
@@ -29,8 +25,8 @@ public class CheckInBO {
         checkInRepository.save(data);
     }
 
-    public PersonEntity getPersonById(Long id) {
-        return personRepository.getPersonEntityById(id);
+    public CheckInEntity getCheckInById(Long id) {
+        return checkInRepository.getCheckInById(id);
     }
 
 }
