@@ -24,4 +24,7 @@ public class PersonBO {
         return personRepository.getPersonEntityById(id);
     }
 
+    public void save(PersonEntity data) {
+        personRepository.save(data);
+    }
 }

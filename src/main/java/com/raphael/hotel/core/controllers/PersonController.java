@@ -1,11 +1,13 @@
 package com.raphael.hotel.core.controllers;
 
 import com.raphael.hotel.core.bos.PersonBO;
+import com.raphael.hotel.persistence.dto.PersonDTO;
 import com.raphael.hotel.persistence.entities.PersonEntity;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -48,6 +50,20 @@ public class PersonController {
         entity.setPersonDocument(entity.getPersonDocument());
         entity.setPersonPhone(entity.getPersonPhone());
         return entity;
+    }
+
+    @RequestMapping(value = "/post", method = RequestMethod.POST)
+    public ResponseEntity newGuest(@RequestBody PersonDTO postData) {
+
+        PersonEntity personEntity = new PersonEntity();
+
+        personEntity.setPersonName(postData.getName());
+        personEntity.setPersonDocument(postData.getDocument());
+        personEntity.setPersonPhone(postData.getPhone());
+
+        personBO.save(personEntity);
+
+        return new ResponseEntity(HttpStatus.CREATED);
     }
 
 }

@@ -16,7 +16,7 @@ To run, go to Gradle Tab and bootRun the application.
 
 ## Methods
 
-### Check-In POST example
+##### Check-In POST example
 
 ```
 {
@@ -25,6 +25,16 @@ To run, go to Gradle Tab and bootRun the application.
 	"vehicle" : false,
 	"person_id" : 9,
 	"bill" : 0
+}
+```
+
+##### Person POST example
+
+```
+{
+	"name" : "Raphael Koszalka",
+	"document" : "777.777.777-77",
+	"phone" : "7777-7777"
 }
 ```
 
