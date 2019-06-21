@@ -26,6 +26,6 @@ public class TableController {
     // in a proper manner
     @RequestMapping(value = "/checked-in", method = RequestMethod.GET)
     public List<TableDTO> getAllCheckedIn() {
-        return new ResponseEntity<>(rulesBO.getCheckedStatus(), HttpStatus.OK);
+        return rulesBO.getCheckedStatus();
     }
 }
