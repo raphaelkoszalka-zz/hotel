@@ -20,9 +20,7 @@ public class CheckInBO {
         this.personRepository = personRepository;
     }
 
-    public List<CheckInEntity> findAll() {
-        return checkInRepository.findAll();
-    }
+
 
     public void saveCheckIn(CheckInEntity checkIn) {
         checkInRepository.save(checkIn);
@@ -31,6 +29,8 @@ public class CheckInBO {
     public CheckInEntity getCheckInById(Long id) {
         return checkInRepository.getCheckInById(id);
     }
-    public List<CheckInEntity> getAllCheckIn() { return checkInRepository.findAll(); }
+    public List<CheckInEntity> findAll() {
+        return checkInRepository.findAll();
+    }
 
 }

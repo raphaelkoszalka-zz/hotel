@@ -41,7 +41,7 @@ public class CheckInController {
 
     @RequestMapping(value = "/get/all", method = RequestMethod.GET)
     public List<CheckInEntity> getCheckInAll() {
-        return checkInBO.getAllCheckIn();
+        return checkInBO.findAll();
     }
 
     @RequestMapping(value = "/post", method = RequestMethod.POST)
