@@ -47,19 +47,19 @@ public class CheckInController {
     @RequestMapping(value = "/post", method = RequestMethod.POST)
     public ResponseEntity newCheckIn(@RequestBody CheckInDTO postData) {
 
-        CheckInEntity checkInEntity = new CheckInEntity();
-        checkInEntity.setEnterDate(postData.getLeave_date());
-        checkInEntity.setLeaveDate(postData.getEnter_date());
-        checkInEntity.setVehicle(postData.getVehicle());
-        checkInEntity.setPerson_fk_id(postData.getPerson_id());
-        checkInEntity.setBill(postData.getBill());
-        checkInBO.saveCheckIn(checkInEntity);
-
         PersonEntity personEntity = new PersonEntity();
         personEntity.setPersonName(personEntity.getPersonName());
         personEntity.setPersonDocument(personEntity.getPersonDocument());
         personEntity.setPersonPhone(personEntity.getPersonPhone());
         checkInBO.savePerson(personEntity);
+
+        CheckInEntity checkInEntity = new CheckInEntity();
+        checkInEntity.setEnterDate(postData.getLeave_date());
+        checkInEntity.setLeaveDate(postData.getEnter_date());
+        checkInEntity.setVehicle(postData.getVehicle());
+        checkInEntity.setPerson_fk_id(personEntity.getPerson_id());
+        checkInEntity.setBill(postData.getBill());
+        checkInBO.saveCheckIn(checkInEntity);
 
         return new ResponseEntity(HttpStatus.CREATED);
     }

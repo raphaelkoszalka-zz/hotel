@@ -8,11 +8,13 @@ To run, go to Gradle Tab and bootRun the application.
 ## Project dependencies
 
 - Gradle
+- JDK 11
 - Liquibase (Optional, but preferable if you would like to use other database than PostegreSQL)
 - Spring Boot;
 - Spring Boot Web;
 - Spring Boot JPA;
 - Any database, for this test I chose PostegreSQL for example.
+
 ## Endpoints
 - /check-in/all (retrieve all check in)
 - /check-in/{check_in_id} (retrieve a single check in)

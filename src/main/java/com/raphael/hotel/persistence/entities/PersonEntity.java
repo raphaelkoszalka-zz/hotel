@@ -27,6 +27,10 @@ public class PersonEntity {
     @Column(name = "phone")
     private String phone;
 
+    public int getPerson_id() {
+        return person_id;
+    }
+
     public String getPersonName()  {
         return name;
     }
