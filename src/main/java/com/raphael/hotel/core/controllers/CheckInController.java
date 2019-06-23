@@ -48,9 +48,9 @@ public class CheckInController {
     public ResponseEntity newCheckIn(@RequestBody CheckInDTO postData) {
 
         PersonEntity personEntity = new PersonEntity();
-        personEntity.setPersonName(personEntity.getPersonName());
-        personEntity.setPersonDocument(personEntity.getPersonDocument());
-        personEntity.setPersonPhone(personEntity.getPersonPhone());
+        personEntity.setPersonName(postData.getName());
+        personEntity.setPersonDocument(postData.getDocument());
+        personEntity.setPersonPhone(postData.getPhone());
         checkInBO.savePerson(personEntity);
 
         CheckInEntity checkInEntity = new CheckInEntity();

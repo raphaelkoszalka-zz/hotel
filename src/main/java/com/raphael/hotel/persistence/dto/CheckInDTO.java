@@ -12,6 +12,9 @@ public class CheckInDTO {
     private LocalDateTime enter_date;
     private LocalDateTime leave_date;
     private Long bill;
+    private String name;
+    private String document;
+    private String phone;
 
 
     public int getPerson_id() { return person_id; }
@@ -28,6 +31,15 @@ public class CheckInDTO {
 
     public boolean getVehicle() { return vehicle; }
     public void setVehicle(boolean status) { this.vehicle = status; }
+
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
+
+    public String getPhone() { return phone; }
+    public void setPhone(String phone) { this.phone = phone; }
+
+    public String getDocument() { return document; }
+    public void setDocument(String document) { this.document = document; }
 
 
 }
