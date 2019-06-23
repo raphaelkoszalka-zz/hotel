@@ -24,4 +24,10 @@ public class TableController {
     public List<TableDTO> getAllCheckedIn() {
         return rulesBO.getCheckedStatus();
     }
+
+    // Refactoring this method in business rule object now
+    @RequestMapping(value = "/checked-in", method = RequestMethod.GET)
+    public List<TableDTO> getlAll() {
+        return rulesBO.getCheckedStatus();
+    }
 }

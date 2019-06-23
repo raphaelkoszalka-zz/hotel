@@ -19,6 +19,10 @@ public class RulesBO {
         this.checkInRepository = checkInRepository;
     }
 
+    public List<CheckInEntity> findAll(final CheckInEntity checkInEntity) {
+        return checkInRepository.findAll();
+    }
+
     private boolean stillHosted(CheckInEntity guest, LocalDateTime moment) {
         return moment.isAfter(guest.getEnterDate()) && moment.isBefore(guest.getLeaveDate());
     }
