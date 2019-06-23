@@ -31,21 +31,6 @@ To run, go to Gradle Tab and bootRun the application.
         }
     }
 ```
-- /check-in/{check_in_id} (retrieve a single check in) response:
-```  
-{
-        "enterDate": "2019-01-30T08:00:00",
-        "leaveDate": "2019-01-30T08:00:00",
-        "vehicle": true,
-        "bill": 0,
-        "person": {
-            "person_id": 1,
-            "personName": "Raphael",
-            "personDocument": "777.777.777-77",
-            "personPhone": "77777-7777"
-        }
-    }
-```
 - /check-in/post (post a new check in)
 
 ## Methods

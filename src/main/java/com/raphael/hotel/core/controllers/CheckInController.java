@@ -26,19 +26,6 @@ public class CheckInController {
         this.checkInBO = checkInBO;
     }
 
-    @RequestMapping(value = "/get/{id}", method = RequestMethod.GET)
-    public CheckInEntity getCheckInById(@PathVariable("id") Long id) {
-        CheckInEntity entity = checkInBO.getCheckInById(id);
-
-        entity.setBill(entity.getBill());
-        entity.setVehicle(entity.getVehicle());
-        entity.setLeaveDate(entity.getLeaveDate());
-        entity.setEnterDate(entity.getEnterDate());
-        entity.setPerson(entity.getPerson());
-
-        return entity;
-    }
-
     @RequestMapping(value = "/get/all", method = RequestMethod.GET)
     public List<CheckInEntity> findAll() {
         return checkInBO.findAll();
