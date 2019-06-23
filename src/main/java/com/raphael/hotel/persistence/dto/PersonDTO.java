@@ -16,12 +16,14 @@ public class PersonDTO {
     public void setName(String name) {
         this.name = name;
     }
+
     public String getDocument() {
         return document;
     }
     public void setDocument(String document) {
         this.document = document;
     }
+
     public String getPhone() {
         return phone;
     }

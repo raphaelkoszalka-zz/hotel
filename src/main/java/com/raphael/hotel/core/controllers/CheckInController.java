@@ -2,7 +2,6 @@ package com.raphael.hotel.core.controllers;
 
 
 import com.raphael.hotel.core.bos.CheckInBO;
-import com.raphael.hotel.core.bos.PersonBO;
 import com.raphael.hotel.persistence.dto.CheckInDTO;
 import com.raphael.hotel.persistence.entities.CheckInEntity;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +31,7 @@ public class CheckInController {
         entity.setVehicle(entity.getVehicle());
         entity.setLeaveDate(entity.getLeaveDate());
         entity.setEnterDate(entity.getEnterDate());
-        entity.setPersonId(entity.getPersonId());
+        entity.setPerson_fk_id(entity.getPerson_fk_id());
         return entity;
     }
 
@@ -43,7 +42,7 @@ public class CheckInController {
         checkInEntity.setEnterDate(postData.getLeave_date());
         checkInEntity.setLeaveDate(postData.getEnter_date());
         checkInEntity.setVehicle(postData.getVehicle());
-        checkInEntity.setPersonId(postData.getPerson_id());
+        checkInEntity.setPerson_fk_id(postData.getPerson_id());
         checkInEntity.setBill(postData.getBill());
         checkInBO.save(checkInEntity);
         return new ResponseEntity(HttpStatus.CREATED);

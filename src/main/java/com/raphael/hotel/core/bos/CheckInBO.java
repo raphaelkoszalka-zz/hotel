@@ -2,7 +2,6 @@ package com.raphael.hotel.core.bos;
 
 import com.raphael.hotel.persistence.entities.CheckInEntity;
 import com.raphael.hotel.persistence.repositories.CheckInRepository;
-import com.raphael.hotel.persistence.repositories.PersonRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

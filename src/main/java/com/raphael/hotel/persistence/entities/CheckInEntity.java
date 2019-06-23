@@ -17,7 +17,7 @@ public class CheckInEntity {
     @Id
     @Column(name = "check_in_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int check_in_id;
 
     @Column(name = "enter_date", nullable = false)
     private LocalDateTime enterDate;
@@ -32,14 +32,7 @@ public class CheckInEntity {
     private Long bill;
 
     @Column(name = "person_fk_id")
-    private int personId;
-
-    public int getId() {
-        return id;
-    }
-    public void setId(int id) {
-        this.id = id;
-    }
+    private int person_fk_id;
 
     public LocalDateTime getEnterDate() {
         return enterDate;
@@ -51,9 +44,7 @@ public class CheckInEntity {
     public LocalDateTime getLeaveDate() {
         return leaveDate;
     }
-    public void setLeaveDate(LocalDateTime leaveDate) {
-        this.leaveDate = leaveDate;
-    }
+    public void setLeaveDate(LocalDateTime leaveDate) { this.leaveDate = leaveDate; }
 
     public boolean getVehicle() {
         return vehicle;
@@ -62,8 +53,8 @@ public class CheckInEntity {
         this.vehicle = status;
     }
 
-    public int getPersonId() { return personId; }
-    public void setPersonId(int personId) { this.personId = personId; }
+    public int getPerson_fk_id() { return person_fk_id; }
+    public void setPerson_fk_id(int person_fk_id) { this.person_fk_id = person_fk_id; }
 
     public Long getBill() { return bill; }
     public void setBill(Long bill) { this.bill = bill; }

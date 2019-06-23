@@ -3,10 +3,14 @@ package com.raphael.hotel.persistence.entities;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class TableEntity {
+
+    @Id
+    private Long id = null;
 
     @Column(name = "name")
     private String name;

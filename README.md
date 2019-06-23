@@ -16,11 +16,11 @@ To run, go to Gradle Tab and bootRun the application.
 ## Endpoints
 
 - /person/all (retrieve all guests)
-- /person/{id} (retrieve a single guest)
+- /person/{check_in_id} (retrieve a single guest)
 - /person/post (post a new guest)
 
 - /check-in/all (retrieve all check in)
-- /check-in/{id} (retrieve a single check in)
+- /check-in/{check_in_id} (retrieve a single check in)
 - /check-in/post (post a new check in)
 
 - /status/checked-in (get checked in guests)
