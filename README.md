@@ -14,17 +14,9 @@ To run, go to Gradle Tab and bootRun the application.
 - Spring Boot JPA;
 - Any database, for this test I chose PostegreSQL for example.
 ## Endpoints
-
-- /person/all (retrieve all guests)
-- /person/{check_in_id} (retrieve a single guest)
-- /person/post (post a new guest)
-
 - /check-in/all (retrieve all check in)
 - /check-in/{check_in_id} (retrieve a single check in)
 - /check-in/post (post a new check in)
-
-- /status/checked-in (get checked in guests)
-- /status/checked-out (get checked out guests)
 
 ## Methods
 
@@ -36,17 +28,10 @@ To run, go to Gradle Tab and bootRun the application.
 	"leave_date" : "2019-06-27T08:00:00",
 	"vehicle" : false,
 	"person_id" : 9,
-	"bill" : 0
-}
-```
-
-##### Person POST example
-
-```
-{
+	"bill" : 0,
 	"name" : "Raphael Koszalka",
-	"document" : "777.777.777-77",
-	"phone" : "7777-7777"
+  "document" : "777.777.777-77",
+  "phone" : "7777-7777"
 }
 ```
 
