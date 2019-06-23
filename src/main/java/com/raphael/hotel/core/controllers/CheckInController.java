@@ -4,6 +4,7 @@ package com.raphael.hotel.core.controllers;
 import com.raphael.hotel.core.bos.CheckInBO;
 import com.raphael.hotel.persistence.dto.CheckInDTO;
 import com.raphael.hotel.persistence.entities.CheckInEntity;
+import com.raphael.hotel.persistence.entities.PersonEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -27,24 +28,34 @@ public class CheckInController {
     @RequestMapping(value = "/single/{id}", method = RequestMethod.GET)
     public CheckInEntity getCheckInById(@PathVariable("id") Long id) {
         CheckInEntity entity = checkInBO.getCheckInById(id);
+
         entity.setBill(entity.getBill());
         entity.setVehicle(entity.getVehicle());
         entity.setLeaveDate(entity.getLeaveDate());
         entity.setEnterDate(entity.getEnterDate());
         entity.setPerson_fk_id(entity.getPerson_fk_id());
+
         return entity;
     }
 
 
     @RequestMapping(value = "/post", method = RequestMethod.POST)
     public ResponseEntity newCheckIn(@RequestBody CheckInDTO postData) {
+
         CheckInEntity checkInEntity = new CheckInEntity();
         checkInEntity.setEnterDate(postData.getLeave_date());
         checkInEntity.setLeaveDate(postData.getEnter_date());
         checkInEntity.setVehicle(postData.getVehicle());
         checkInEntity.setPerson_fk_id(postData.getPerson_id());
         checkInEntity.setBill(postData.getBill());
-        checkInBO.save(checkInEntity);
+        checkInBO.saveCheckIn(checkInEntity);
+
+        PersonEntity personEntity = new PersonEntity();
+        personEntity.setPersonName(personEntity.getPersonName());
+        personEntity.setPersonDocument(personEntity.getPersonDocument());
+        personEntity.setPersonPhone(personEntity.getPersonPhone());
+        checkInBO.savePerson(personEntity);
+
         return new ResponseEntity(HttpStatus.CREATED);
     }
 
