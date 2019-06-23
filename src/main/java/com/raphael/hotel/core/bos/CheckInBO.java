@@ -29,10 +29,6 @@ public class CheckInBO {
         personRepository.save(person);
     }
 
-    public CheckInEntity getCheckInById(Long id) {
-        return checkInRepository.getCheckInById(id);
-    }
-
     public List<CheckInEntity> findAll() {
         return checkInRepository.findAll();
     }
