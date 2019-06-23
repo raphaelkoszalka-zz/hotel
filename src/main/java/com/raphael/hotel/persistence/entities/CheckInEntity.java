@@ -4,9 +4,12 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.time.LocalDateTime;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -31,8 +34,9 @@ public class CheckInEntity {
     @Column(name = "bill")
     private Long bill;
 
-    @Column(name = "person_fk_id")
-    private int person_fk_id;
+    @JoinColumn(name = "person_fk_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private PersonEntity person_fk_id;
 
     public LocalDateTime getEnterDate() {
         return enterDate;
@@ -53,8 +57,8 @@ public class CheckInEntity {
         this.vehicle = status;
     }
 
-    public int getPerson_fk_id() { return person_fk_id; }
-    public void setPerson_fk_id(int person_fk_id) { this.person_fk_id = person_fk_id; }
+    public PersonEntity getPerson_fk_id() { return person_fk_id; }
+    public void setPerson_fk_id(PersonEntity person_fk_id) { this.person_fk_id = person_fk_id; }
 
     public Long getBill() { return bill; }
     public void setBill(Long bill) { this.bill = bill; }

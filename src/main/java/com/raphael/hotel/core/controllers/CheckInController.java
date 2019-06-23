@@ -40,7 +40,7 @@ public class CheckInController {
     }
 
     @RequestMapping(value = "/get/all", method = RequestMethod.GET)
-    public List<CheckInEntity> getCheckInAll() {
+    public List<CheckInEntity> findAll() {
         return checkInBO.findAll();
     }
 
@@ -57,7 +57,7 @@ public class CheckInController {
         checkInEntity.setEnterDate(postData.getLeave_date());
         checkInEntity.setLeaveDate(postData.getEnter_date());
         checkInEntity.setVehicle(postData.getVehicle());
-        checkInEntity.setPerson_fk_id(personEntity.getPerson_id());
+        checkInEntity.setPerson_fk_id(personEntity);
         checkInEntity.setBill(postData.getBill());
         checkInBO.saveCheckIn(checkInEntity);
 

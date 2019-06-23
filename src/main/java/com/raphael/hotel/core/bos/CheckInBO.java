@@ -15,22 +15,27 @@ public class CheckInBO {
     private final PersonRepository personRepository;
 
     @Autowired
-    public CheckInBO(final CheckInRepository checkInRepository, final PersonRepository personRepository) {
+    public CheckInBO(final CheckInRepository checkInRepository,
+        final PersonRepository personRepository) {
         this.checkInRepository = checkInRepository;
         this.personRepository = personRepository;
     }
 
-
-
     public void saveCheckIn(CheckInEntity checkIn) {
         checkInRepository.save(checkIn);
     }
-    public void savePerson(PersonEntity person) { personRepository.save(person); }
+
+    public void savePerson(PersonEntity person) {
+        personRepository.save(person);
+    }
+
     public CheckInEntity getCheckInById(Long id) {
         return checkInRepository.getCheckInById(id);
     }
+
     public List<CheckInEntity> findAll() {
         return checkInRepository.findAll();
     }
+
 
 }
