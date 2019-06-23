@@ -34,9 +34,9 @@ public class CheckInEntity {
     @Column(name = "bill")
     private Long bill;
 
-    @JoinColumn(name = "person_fk_id")
+    @JoinColumn(name = "person")
     @ManyToOne(fetch = FetchType.LAZY)
-    private PersonEntity person_fk_id;
+    private PersonEntity person;
 
     public LocalDateTime getEnterDate() {
         return enterDate;
@@ -57,8 +57,8 @@ public class CheckInEntity {
         this.vehicle = status;
     }
 
-    public PersonEntity getPerson_fk_id() { return person_fk_id; }
-    public void setPerson_fk_id(PersonEntity person_fk_id) { this.person_fk_id = person_fk_id; }
+    public PersonEntity getPerson() { return person; }
+    public void setPerson(PersonEntity person) { this.person = person; }
 
     public Long getBill() { return bill; }
     public void setBill(Long bill) { this.bill = bill; }

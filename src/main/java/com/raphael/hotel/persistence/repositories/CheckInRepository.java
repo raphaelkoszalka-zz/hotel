@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface CheckInRepository extends JpaRepository<CheckInEntity, String> {
 
-    @Query("SELECT p.name, p.document, p.phone, c from PersonEntity p, CheckInEntity c WHERE p.person_id = c.person_fk_id")
+    @Query("SELECT p.name, p.document, p.phone, c from PersonEntity p, CheckInEntity c WHERE p.person_id = c.person")
     List<CheckInDTO> getAllGuests();
 
     @Query("FROM CheckInEntity cki WHERE id = :id")

@@ -34,7 +34,7 @@ public class CheckInController {
         entity.setVehicle(entity.getVehicle());
         entity.setLeaveDate(entity.getLeaveDate());
         entity.setEnterDate(entity.getEnterDate());
-        entity.setPerson_fk_id(entity.getPerson_fk_id());
+        entity.setPerson(entity.getPerson());
 
         return entity;
     }
@@ -57,7 +57,7 @@ public class CheckInController {
         checkInEntity.setEnterDate(postData.getLeave_date());
         checkInEntity.setLeaveDate(postData.getEnter_date());
         checkInEntity.setVehicle(postData.getVehicle());
-        checkInEntity.setPerson_fk_id(personEntity);
+        checkInEntity.setPerson(personEntity);
         checkInEntity.setBill(postData.getBill());
         checkInBO.saveCheckIn(checkInEntity);
 
