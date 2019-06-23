@@ -5,6 +5,7 @@ import com.raphael.hotel.core.bos.CheckInBO;
 import com.raphael.hotel.persistence.dto.CheckInDTO;
 import com.raphael.hotel.persistence.entities.CheckInEntity;
 import com.raphael.hotel.persistence.entities.PersonEntity;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,7 +26,7 @@ public class CheckInController {
         this.checkInBO = checkInBO;
     }
 
-    @RequestMapping(value = "/single/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/get/{id}", method = RequestMethod.GET)
     public CheckInEntity getCheckInById(@PathVariable("id") Long id) {
         CheckInEntity entity = checkInBO.getCheckInById(id);
 
@@ -38,6 +39,10 @@ public class CheckInController {
         return entity;
     }
 
+    @RequestMapping(value = "/get/all", method = RequestMethod.GET)
+    public List<CheckInEntity> getCheckInAll() {
+        return checkInBO.getAllCheckIn();
+    }
 
     @RequestMapping(value = "/post", method = RequestMethod.POST)
     public ResponseEntity newCheckIn(@RequestBody CheckInDTO postData) {
