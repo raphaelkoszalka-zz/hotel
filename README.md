@@ -3,7 +3,8 @@ Just import the project into IntelliJ and let Gradle do the rest.
 To run, go to Gradle Tab and bootRun the application.
 
 ## To Do List (if I had more time)
-- Security with Spring Security or Apache Shiro
+- Security with Spring Security or Apache Shiro;
+- Same person check in without creating a new person row at the DB.
 
 ## Project dependencies
 
@@ -57,7 +58,7 @@ To run, go to Gradle Tab and bootRun the application.
 - com.raphael.hotel.persistence.entities
 - com.raphael.hotel.persistence.repositories
 - com.raphael.hotel.core.controllers
-- com.raphael.hotel.core.bo (business rules objects)
+- com.raphael.hotel.core.bo
 
 ## Use of Lombok and Model Mapper
 Since of other people might run the project without Lombok installed and 
