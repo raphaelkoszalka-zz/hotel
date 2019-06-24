@@ -2,9 +2,11 @@
 Just import the project into IntelliJ and let Gradle do the rest.
 To run, go to Gradle Tab and bootRun the application.
 
-## To Do List (if I had more time)
+## To Do List
 - Security with Spring Security or Apache Shiro;
 - Same person check in without creating a new person row at the DB.
+- Check billing (still do not know if I am going to do this here, at the
+backend or at the frontend).
 
 ## Project dependencies
 
