@@ -1,3 +1,9 @@
+## Important note
+Since of my available time being extremely low this last few days, as of I am currently working, 
+I chose to focus on the application architecture instead of writing the business rules mentioned
+at the test. I can totally write them, it was just a matter of time and I think that write the application
+architecture is a better way to show my skills as a developer.
+
 ## How to
 Just import the project into IntelliJ and let Gradle do the rest.
 To run, go to Gradle Tab and bootRun the application.
